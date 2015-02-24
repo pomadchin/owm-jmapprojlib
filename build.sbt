@@ -1,16 +1,26 @@
 name := "owm-jmapprojlib"
 
-organization := "io.owm"
+organization := "com.owm"
+
+description := "Jmapprojlib fork with Datum conversion support and a \"latlong\" projection similar to PROJ.4."
+
+homepage := Some(url("https://github.com/pomadchin/owm-jmapprojlib"))
 
 scalaVersion := "2.11.5"
 
 version := "1.0"
 
-libraryDependencies ++= Seq()
+publishMavenStyle := true
 
-resolvers ++= Seq(
-  "Sonatype OSS Releases"  at "http://oss.sonatype.org/content/repositories/releases/",
-  "Sonatype OSS Snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"  
+bintrayPublishSettings
+
+bintray.Keys.repository in bintray.Keys.bintray := "owm-java-repository"
+
+bintray.Keys.bintrayOrganization in bintray.Keys.bintray := Some("owm")
+
+licenses ++= Seq(
+  ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html")), 
+  ("MIT", url("http://opensource.org/licenses/MIT"))
 )
 
 fork := true
